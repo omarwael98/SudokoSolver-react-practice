@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/SudokoSolver-react-practice/static/css/main.23fd7e40.css",
+    "main.js": "/SudokoSolver-react-practice/static/js/main.17206044.js",
+    "static/js/787.ebeb48db.chunk.js": "/SudokoSolver-react-practice/static/js/787.ebeb48db.chunk.js",
+    "index.html": "/SudokoSolver-react-practice/index.html",
+    "main.23fd7e40.css.map": "/SudokoSolver-react-practice/static/css/main.23fd7e40.css.map",
+    "main.17206044.js.map": "/SudokoSolver-react-practice/static/js/main.17206044.js.map",
+    "787.ebeb48db.chunk.js.map": "/SudokoSolver-react-practice/static/js/787.ebeb48db.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.23fd7e40.css",
+    "static/js/main.17206044.js"
+  ]
+}
