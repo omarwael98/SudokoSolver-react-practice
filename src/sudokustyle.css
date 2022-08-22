@@ -1,0 +1,129 @@
+#boardContainer{
+    margin: 15px;
+    width: fit-content;
+    padding: 3px;
+}
+
+#navhead{
+    font-size: 40px;
+    width: fit-content;
+    margin-left: 15px;
+}
+
+#navbar{
+    display: flex;
+    flex-direction: row;
+    background-color: blanchedalmond;
+    justify-content: space-between;
+    align-items: center;
+    height: 90px;
+    /* padding: 10px; */
+}
+
+#mainPagebtns{
+    width:150px;
+    margin-right: 60px;
+    display: flex;
+    justify-content: space-between;
+}
+#mainPagebtns button{
+    background-color: transparent;
+    font-size: x-large;
+    border:none;
+}
+#container{
+    display: flex;
+    flex-direction: row;
+    margin-left: 20px;
+}
+
+#rules{
+    margin-top: 30px;
+    margin-right: 35px;
+    margin-left: 15px;
+    font-size: 20px;
+    text-align: justify;
+}
+
+#btns{
+    display: flex;
+    justify-content: space-between;
+    padding: 1px;
+}
+
+#btns button{
+    width: 120px;
+    height: 40px;
+    border-radius: 5px;
+    font-size: x-large;
+}
+
+#boardContainer input{
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    border: none;
+    font-size: xx-large;
+}
+
+.error {
+    background-color: rgb(247, 169, 169);
+}
+
+.solved{
+    color:rgb(33, 118, 197);
+}
+
+#h2error{
+    color: red;
+    width: 430px;
+}
+
+/*----------------------------------------------------*/
+#board9by9{
+    border-collapse: collapse;
+}
+
+#board9by9 td {
+    border:1px solid grey;
+}
+
+#board9by9 td:first-child {
+    border-left: 3px solid;
+}
+
+#board9by9 td:nth-child(3n) {
+    border-right:3px solid ;
+}
+
+#board9by9 tr:first-child {
+    border-top:3px solid;
+}
+
+#board9by9 tr:nth-child(3n) td {
+    border-bottom:3px solid ;
+}
+/* ----------------------------------------------- */
+#board16by16{
+    border-collapse: collapse;
+}
+
+#board16by16 td {
+    border:1px solid grey;
+}
+
+#board16by16 td:first-child {
+    border-left: 3px solid;
+}
+
+#board16by16 td:nth-child(4n) {
+    border-right:3px solid ;
+}
+
+#board16by16 tr:first-child {
+    border-top:3px solid;
+}
+
+#board16by16 tr:nth-child(4n) td {
+    border-bottom:3px solid ;
+}
