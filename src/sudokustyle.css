@@ -1,69 +1,18 @@
-#boardContainer{
-    margin: 15px;
-    width: fit-content;
-    padding: 3px;
-}
-
-#navhead{
-    font-size: 40px;
-    width: fit-content;
-    margin-left: 15px;
-}
-
-#navbar{
-    display: flex;
-    flex-direction: row;
+.navbar{
     background-color: blanchedalmond;
-    justify-content: space-between;
-    align-items: center;
-    height: 90px;
-    /* padding: 10px; */
-}
-
-#mainPagebtns{
-    width:150px;
-    margin-right: 60px;
-    display: flex;
-    justify-content: space-between;
-}
-#mainPagebtns button{
-    background-color: transparent;
-    font-size: x-large;
-    border:none;
-}
-#container{
-    display: flex;
-    flex-direction: row;
-    margin-left: 20px;
-}
-
-#rules{
-    margin-top: 30px;
-    margin-right: 35px;
-    margin-left: 15px;
-    font-size: 20px;
-    text-align: justify;
-}
-
-#btns{
-    display: flex;
-    justify-content: space-between;
-    padding: 1px;
-}
-
-#btns button{
-    width: 120px;
-    height: 40px;
-    border-radius: 5px;
-    font-size: x-large;
 }
 
 #boardContainer input{
-    width: 40px;
-    height: 40px;
+    width: 100%;
+    aspect-ratio: 1 / 1;
     text-align: center;
     border: none;
-    font-size: xx-large;
+    /* font-size: xx-large; */
+}
+
+#board9by9{
+    width: 100%;
+    aspect-ratio: 1 / 1;
 }
 
 .error {
@@ -76,7 +25,6 @@
 
 #h2error{
     color: red;
-    width: 430px;
 }
 
 /*----------------------------------------------------*/
@@ -126,4 +74,16 @@
 
 #board16by16 tr:nth-child(4n) td {
     border-bottom:3px solid ;
+}
+/*--------------------------------------------------*/
+
+
+@media (max-width:700px){
+    #container{
+        flex-direction: column;
+    }
+
+    /* #boardContainer input{
+        font-size: x-large;
+    } */
 }

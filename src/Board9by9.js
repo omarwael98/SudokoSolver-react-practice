@@ -112,21 +112,23 @@ class Board9by9 extends Component{
 
 
     solve = (e)=>{
-        var checks = this.checkBoard();
-        if(checks.validBoard){
-            var args = {
-                Board: this.state.board,
-                Rows: checks.rows,
-                Cols: checks.cols,
-                Grids: checks.grids,
-            };
-            this.solver(0,0,args);
-            this.setState((state) =>{
-                return{
-                    board: args.Board,
-                    solved:true,
-                }
-            });
+        if(!this.state.solved){
+            var checks = this.checkBoard();
+            if(checks.validBoard){
+                var args = {
+                    Board: this.state.board,
+                    Rows: checks.rows,
+                    Cols: checks.cols,
+                    Grids: checks.grids,
+                };
+                this.solver(0,0,args);
+                this.setState((state) =>{
+                    return{
+                        board: args.Board,
+                        solved:true,
+                    }
+                });
+            }
         }
     }
 
@@ -169,7 +171,7 @@ class Board9by9 extends Component{
                                     maxLength='1' 
                                     inputMode='numeric' 
                                     value={this.state.board[i][j]} 
-                                    className={this.state.valid ? (this.state.solved?'solved':''):'error'} 
+                                    className={this.state.valid ? (this.state.solved?'solved fs-5':'fs-5'):'error fs-5'} 
                                     key={i*9+j}
                                     disabled={this.state.solved}
                                     onInput={(e)=>{this.changeboard(e.target.value,i,j)}}>
@@ -179,17 +181,16 @@ class Board9by9 extends Component{
             row[i]= <tr key={i}>{col}</tr>;
         }
         return (
-            <div id='boardContainer'>
-                <br></br>
-                <table id='board9by9'>
+            <div id='boardContainer' className="">
+                <table id='board9by9' className="table-responsive">
                     <tbody>
                         {row}
                     </tbody>
                 </table>
-                <h2 id='h2error'>{this.state.errorMsg}</h2>
-                <div id='btns'>
-                    <button onClick={(e)=>this.solve()}>Solve</button>
-                    <button onClick={(e)=>this.reset()}>Reset</button>
+                <h3 id='h2error' className="h3">{this.state.errorMsg}</h3>
+                <div className="d-flex justify-content-between">
+                    <button className="btn btn-dark fs-4" onClick={(e)=>this.solve()}>Solve</button>
+                    <button className="btn btn-dark fs-4" onClick={(e)=>this.reset()}>Reset</button>
                 </div>
             </div>
         );

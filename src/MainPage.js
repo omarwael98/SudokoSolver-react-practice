@@ -32,18 +32,20 @@ class Main extends Component{
 
         return(
             <div>
-                <nav id='navbar'>
-                    <h1 id='navhead'>Sudoku Solver</h1>
-                    <div id='mainPagebtns'>
-                        <button onClick={(e)=>{this.Board9()}}>9x9</button>
-                        <button onClick={(e)=>{this.Board16()}}>16x16</button>
+                <nav className="navbar">
+                    <div className="container-fluid">
+                        <h1 className="h1">Sudoku Solver</h1>
+                        <div>
+                            <button className="btn" onClick={(e)=>{this.Board9()}}>9x9</button>
+                            <button className="btn" onClick={(e)=>{this.Board16()}}>16x16</button>
+                        </div>
                     </div>
                 </nav>
-                <div id='container'>
-                    <div id='boardview'>
+                <div id='container' className="d-flex">
+                    <div className="m-2">
                         {(this.state.view==='9x9')?<Board9by9></Board9by9>:<Board16by16></Board16by16>}
                     </div>
-                    <div id='rules'>
+                    <div className="text fs-5 m-1">
                     Rule 1 - Each row must contain the numbers from 1 to 9, without repetitions
 The player must focus on filling each row of the grid while ensuring there are no duplicated numbers. The placement order of the digits is irrelevant.
  

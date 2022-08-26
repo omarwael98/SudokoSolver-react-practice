@@ -76,7 +76,7 @@ class Board16by16 extends Component{
             Rows:r,
             Cols:c,
             Grids:g,
-            vaildBoard:v
+            validBoard:v
         }
         return checks;
     }
@@ -111,21 +111,23 @@ class Board16by16 extends Component{
 
 
     solve = (e)=>{
-        var checks = this.checkBoard();
-        if(checks.vaildBoard){
-            var args = {
-                Board:this.state.board,
-                Rows:checks.Rows,
-                Cols:checks.Cols,
-                Grids:checks.Grids
-            };
-            this.solver(0,0,args);
-            this.setState((state) =>{
-                return{
-                    board:args.Board,
-                    solved:true,
-                }
-            });
+        if(!this.state.solved){
+            var checks = this.checkBoard();
+            if(checks.validBoard){
+                var args = {
+                    Board: this.state.board,
+                    Rows: checks.Rows,
+                    Cols: checks.Cols,
+                    Grids: checks.Grids,
+                };
+                this.solver(0,0,args);
+                this.setState((state) =>{
+                    return{
+                        board: args.Board,
+                        solved:true,
+                    }
+                });
+            }
         }
     }
 
@@ -168,7 +170,7 @@ class Board16by16 extends Component{
                                     maxLength='2' 
                                     inputMode='numeric' 
                                     value={this.state.board[i][j]} 
-                                    className={this.state.valid ? (this.state.solved?'solved':''):'error'} 
+                                    className={this.state.valid ? (this.state.solved?'solved fs-6':'fs-6'):'error fs-6'} 
                                     key={i*16+j}
                                     disabled={this.state.solved}
                                     onInput={(e)=>{this.changeboard(e.target.value,i,j)}}>
@@ -179,16 +181,15 @@ class Board16by16 extends Component{
         }
         return (
             <div id='boardContainer'>
-                <br></br>
-                <table id='board16by16'>
+                <table id='board16by16' className="table-responsive">
                     <tbody>
                         {row}
                     </tbody>
                 </table>
-                <h2 id='h2error'>{this.state.errorMsg}</h2>
-                <div id='btns'>
-                    <button onClick={(e)=>this.solve()}>Solve</button>
-                    <button onClick={(e)=>this.reset()}>Reset</button>
+                <h2 id='h2error' className="h3">{this.state.errorMsg}</h2>
+                <div className="d-flex justify-content-between">
+                    <button className="btn btn-dark fs-4" onClick={(e)=>this.solve()}>Solve</button>
+                    <button className="btn btn-dark fs-4" onClick={(e)=>this.reset()}>Reset</button>
                 </div>
             </div>
         );
